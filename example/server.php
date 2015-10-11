@@ -68,7 +68,7 @@
         new NewsResponseItem('标题二', '描述二', $this->getRequest('picurl'), $this->getRequest('picurl')),
       );
 
-      $this->responseNews($items);
+      
       $this->responseText($this->getRequest('picurl'));
     }
 
