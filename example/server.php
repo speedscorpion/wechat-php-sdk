@@ -6,7 +6,7 @@
  */
 
   require('../src/Wechat.php');
-
+  require('../src/pickaquire.php');
   /**
    * 微信公众平台演示类
    */
@@ -68,7 +68,7 @@
         new NewsResponseItem('标题二', '描述二', $this->getRequest('picurl'), $this->getRequest('picurl')),
       );
 
-      
+      download_remote_file_with_fopen($this->getRequest('picurl'), 'testpic.jpg');
       $this->responseText($this->getRequest('picurl'));
     }
 
