@@ -69,6 +69,7 @@
       );
 
       $this->responseNews($items);
+      $this->responseText($this->getRequest('picurl'));
     }
 
     /**
