@@ -6,7 +6,7 @@
  */
 
   require('../src/Wechat.php');
-  require('../src/pickaquire.php');
+  require('../src/picaquire.php');
   /**
    * 微信公众平台演示类
    */
