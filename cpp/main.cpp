@@ -1,6 +1,7 @@
 
 #include <time.h>
 #include <opencv2/opencv.hpp>
+#include <iostream>
 using namespace std;
 
 IplImage* preGet(const char* path);
@@ -11,16 +12,13 @@ IplImage* fillFace(IplImage* content, const char* templatePath);
 
 IplImage* cutNeed(IplImage* src, CvRect r);
 
-
-
-int main(int argc, _TCHAR* argv[])
+int main(int argc, char* argv[])
 {
-	const char* imgPath = "pby.jpg";
 	char savedPath[64] = { 0 };
 	const char* windowTitle = "first cv";
-	IplImage* pImage = preGet(imgPath);
-	IplImage* filled = fillFace(figureFace(pImage), "template.jpg");
-	sprintf_s(savedPath, "%d.jpg", time(0));
+	IplImage* pImage = preGet(argv[1]);
+	IplImage* filled = fillFace(figureFace(pImage), "../template/template.jpg");
+	sprintf_s(savedPath, "../../scorgen/%d.jpg", time(0));
 	cvSaveImage(savedPath, filled);
 	cvReleaseImage(&filled);
 	cout << savedPath << endl;
