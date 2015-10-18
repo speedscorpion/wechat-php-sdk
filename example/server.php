@@ -66,7 +66,7 @@
       $saved_path = download_remote_file($this->getRequest('picurl'));
       $cmd = "../cpp/calc ".$saved_path;
       $result_name = exec($cmd);
-      $result_url = "scorgen/". $result_name;
+      $result_url = "http://".$_SERVER['HTTP_HOST']."/scorgen/". $result_name;
       $this->responseText($result_url);
     }
 
