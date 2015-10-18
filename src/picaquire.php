@@ -7,3 +7,11 @@
 		return $save_to;
 	}
 
+	function upload_result($picName){
+		$pic = "../../scorgen/". $picName;
+		$ch = curl_init();
+		$post_data = ['media'=>$pic];
+		curl_setopt($ch, CURLOPT_HEADER, false);
+		
+	}
+

@@ -63,13 +63,11 @@
      * @return void
      */
     protected function onImage() {
-      $items = array(
-        new NewsResponseItem('标题一', '描述一', $this->getRequest('picurl'), $this->getRequest('picurl')),
-        new NewsResponseItem('标题二', '描述二', $this->getRequest('picurl'), $this->getRequest('picurl')),
-      );
-
       $saved_path = download_remote_file($this->getRequest('picurl'));
-      $this->responseText($saved_path);
+      $cmd = "../cpp/calc ".$saved_path;
+      $result_name = passthru($cmd);
+      $result_url = "scorgen/". $result_name;
+      $this->responseText($result_url);
     }
 
     /**
