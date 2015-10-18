@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
 	const char* windowTitle = "first cv";
 	IplImage* pImage = preGet(argv[1]);
 	IplImage* filled = fillFace(figureFace(pImage), "../template/template.jpg");
-	sprintf_s(savedPath, "../../scorgen/%d.jpg", time(0));
+	sprintf(savedPath, "../../scorgen/%d.jpg", time(0));
 	cvSaveImage(savedPath, filled);
 	cvReleaseImage(&filled);
 	cout << savedPath << endl;
