@@ -72,7 +72,7 @@ IplImage* preGet(const char* imgPath){
 }
 
 IplImage* figureFace(IplImage* image){
-	CvHaarClassifierCascade* classifier = (CvHaarClassifierCascade*)cvLoad("haarcascade_frontalface_alt2.xml");
+	CvHaarClassifierCascade* classifier = (CvHaarClassifierCascade*)cvLoad("../cpp/haarcascade_frontalface_alt2.xml");
 	CvMemStorage* storage = cvCreateMemStorage(0);
 	cvClearMemStorage(storage);
 	CvSeq* seqFaced = cvHaarDetectObjects(image, classifier, storage);
