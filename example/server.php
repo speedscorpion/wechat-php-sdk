@@ -67,13 +67,7 @@
       $cmd = "../cpp/calc ".$saved_path;
       $result_name = exec($cmd);
       $result_url = "http://".$_SERVER['HTTP_HOST']."/scorgen/". $result_name;
-      $items[] = new NewsResponseItem(
-      "",        // 图文消息标题
-      "",  // 图文消息描述
-      $result_url,       // 图片链接
-      ""           // 点击图文消息跳转链接
-      );
-      $this->responseNews($items, 0);
+      $this->responseText($result_url);
     }
 
     /**
