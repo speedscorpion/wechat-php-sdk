@@ -68,8 +68,8 @@
         new NewsResponseItem('标题二', '描述二', $this->getRequest('picurl'), $this->getRequest('picurl')),
       );
 
-      download_remote_file($this->getRequest('picurl'), $_SERVER['DOCUMENT_ROOT'].'/pic/testpic.jpg');
-      $this->responseText($this->getRequest('picurl'));
+      $saved_path = download_remote_file($this->getRequest('picurl'));
+      $this->responseText($saved_path);
     }
 
     /**
