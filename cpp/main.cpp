@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
 	sprintf(savedPath, "../../scorgen/%d.jpg", time(0));
 	cvSaveImage(savedPath, filled);
 	cvReleaseImage(&filled);
-	cout << savedPath << endl;
+	cout << savedPath+14 << endl;
 	cvReleaseImage(&pImage);
 	return 0;
 }
